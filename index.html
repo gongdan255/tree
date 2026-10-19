@@ -2,23 +2,26 @@
 *{box-sizing:border-box}body{margin:0;background:#050507;color:#eee9eb;font:14px system-ui,-apple-system,sans-serif;overflow:hidden}canvas{display:block;width:100vw;height:100dvh;touch-action:none}header{position:absolute;top:30px;left:36px;pointer-events:none}.brand{font-family:Georgia,serif;font-size:24px;letter-spacing:6px}.brand span{font:10px system-ui;letter-spacing:3px;color:#93888e;display:block;margin-top:10px}button,input{font:inherit}button{cursor:pointer;color:inherit;border:1px solid #ffffff20;background:#ffffff07;border-radius:9px;padding:10px 14px}button:hover{background:#ffffff15}button:focus-visible,input:focus-visible{outline:2px solid #efb5cb;outline-offset:3px}.tools{position:absolute;top:30px;right:30px;display:flex;gap:8px}.panel{position:absolute;right:30px;top:90px;width:276px;padding:23px;background:#161317ed;border:1px solid #ffffff13;border-radius:18px;box-shadow:0 20px 70px #0008;backdrop-filter:blur(20px)}.panel[hidden]{display:none}h2{font:19px Georgia,serif;margin:0 0 5px}small{color:#978a94;font-size:11px}.field{display:block;margin-top:22px;font-size:12px;color:#beb3ba}input[type=text]{width:100%;margin-top:9px;padding:11px;background:#ffffff06;color:white;border:1px solid #ffffff14;border-radius:7px;outline:none}.swatches{display:flex;gap:12px;margin-top:12px}.swatch{width:25px;height:25px;padding:0;border-radius:50%;background:var(--c);border:3px solid #fff2}.swatch:hover{background:var(--c);transform:scale(1.12)}.colorrow{display:flex;justify-content:space-between;align-items:center;margin-top:12px}input[type=color]{height:27px;width:42px;padding:0;background:none;border:none;cursor:pointer}input[type=range]{width:100%;accent-color:#e8b5c9;margin-top:12px}.rangetitle{display:flex;justify-content:space-between}.footer{position:absolute;bottom:25px;width:100%;text-align:center;color:#827780;font-size:10px;letter-spacing:3px;pointer-events:none}.note{position:absolute;left:9%;top:46%;pointer-events:none;width:28%;text-align:center;text-shadow:0 0 18px #ffc6da44}.note h1{font:italic clamp(20px,3vw,42px) Georgia,'Times New Roman',serif;margin:0 0 13px;font-weight:400;overflow-wrap:anywhere}.note p{font:italic 18px Georgia,serif;margin:0;white-space:pre-wrap;overflow-wrap:anywhere}.clean header,.clean .note~.footer,.clean .panel{display:none}.clean .tools{opacity:0;transition:opacity .2s}.clean .tools:hover,.clean .tools:focus-within{opacity:1}.clean .exit{display:block;position:absolute;bottom:20px;right:20px;opacity:.35}.exit{display:none}.hint{font-size:10px;color:#887c85;line-height:1.8;margin-top:20px}.reset{margin-top:14px;width:100%;font-size:12px} @media(max-width:650px){header{top:22px;left:20px}.brand{font-size:20px}.tools{top:20px;right:16px}.tools button{padding:8px 10px;font-size:12px}.panel{right:16px;top:74px;width:260px}.note{left:6%;top:29%;width:88%}.note h1{font-size:28px}.note p{font-size:16px}.footer{font-size:9px;letter-spacing:2px;bottom:18px}}
 
 body{background:#000}header,.footer{display:none}.tools{top:auto;bottom:24px;right:20px}.panel{top:auto;bottom:80px;max-height:calc(100dvh - 110px);overflow:auto}.note{left:6%;width:80%;top:10%;text-align:left}.note h1{font:italic clamp(12px,2.8vw,27px) Georgia,'Times New Roman',serif;margin:0 0 6px;color:#fff!important}.note p{font:italic clamp(12px,2.7vw,24px) Georgia,serif;color:#fff!important}.clean .exit{font-size:11px;padding:7px 10px;opacity:.2}.tools button{font-size:12px;background:#111c}.note{text-shadow:0 0 5px #fff5}
-</style></head><body><canvas id="scene" aria-label="旋转闪耀的粒子圣诞树，树顶爱心，地面星光环绕"></canvas><header><div class="brand">星愿<span>A LITTLE CHRISTMAS MAGIC</span></div></header><div class="note"><h1 id="greeting">Merry Christmas</h1><p id="dedication">To: you ♡</p></div><div class="tools"><button id="play" aria-label="暂停动画">暂停</button><button id="clean">纯净模式</button><button id="edit" aria-expanded="false">定制 ✧</button></div><section class="panel" hidden><h2>把星光，送给你</h2><small>YOUR OWN LITTLE UNIVERSE</small><label class="field">祝福文字<input id="titleInput" type="text" maxlength="70" value="Merry Christmas"></label><label class="field">送给谁<input id="toInput" type="text" maxlength="70" value="To: you ♡"></label><div class="field">星光配色<div class="swatches"><button class="swatch" style="--c:#f7b7cf" data-color="#f7b7cf" aria-label="玫瑰粉"></button><button class="swatch" style="--c:#b2d9ff" data-color="#b2d9ff" aria-label="冰川蓝"></button><button class="swatch" style="--c:#e7c986" data-color="#e7c986" aria-label="香槟金"></button><button class="swatch" style="--c:#b9a5f7" data-color="#b9a5f7" aria-label="梦幻紫"></button><button class="swatch" style="--c:#99e4c0" data-color="#99e4c0" aria-label="薄荷绿"></button></div><label class="colorrow">自选颜色<input id="color" type="color" value="#f7b7cf"></label></div><label class="field"><span class="rangetitle">流动速度<span id="speedLabel">1.0×</span></span><input id="speed" type="range" min="0.2" max="2" step="0.1" value="1"></label><label class="field">星光密度<input id="density" type="range" min="0.4" max="1.4" step="0.1" value="1"></label><button id="reset" class="reset">恢复初始星愿</button><div class="hint">修改会自动保存在当前浏览器。<br>拖动画面旋转视角 · 纯净模式适合录屏</div></section><div class="footer">MADE OF STARDUST & A LITTLE LOVE</div><button class="exit" id="exit">退出纯净模式</button><script>
+</style></head><body><canvas id="scene" aria-label="旋转闪耀的粒子圣诞树，分层枝叶和彩色挂饰，树顶爱心，地面星光环绕"></canvas><header><div class="brand">星愿<span>A LITTLE CHRISTMAS MAGIC</span></div></header><div class="note"><h1 id="greeting">Merry Christmas</h1><p id="dedication">To: you ♡</p></div><div class="tools"><button id="play" aria-label="暂停动画">暂停</button><button id="clean">纯净模式</button><button id="edit" aria-expanded="false">定制 ✧</button></div><section class="panel" hidden><h2>把星光，送给你</h2><small>YOUR OWN LITTLE UNIVERSE</small><label class="field">祝福文字<input id="titleInput" type="text" maxlength="70" value="Merry Christmas"></label><label class="field">送给谁<input id="toInput" type="text" maxlength="70" value="To: you ♡"></label><div class="field">星光配色<div class="swatches"><button class="swatch" style="--c:#f7b7cf" data-color="#f7b7cf" aria-label="玫瑰粉"></button><button class="swatch" style="--c:#b2d9ff" data-color="#b2d9ff" aria-label="冰川蓝"></button><button class="swatch" style="--c:#e7c986" data-color="#e7c986" aria-label="香槟金"></button><button class="swatch" style="--c:#b9a5f7" data-color="#b9a5f7" aria-label="梦幻紫"></button><button class="swatch" style="--c:#99e4c0" data-color="#99e4c0" aria-label="薄荷绿"></button></div><label class="colorrow">自选颜色<input id="color" type="color" value="#f7b7cf"></label></div><label class="field"><span class="rangetitle">流动速度<span id="speedLabel">1.0×</span></span><input id="speed" type="range" min="0.2" max="2" step="0.1" value="1"></label><label class="field">星光密度<input id="density" type="range" min="0.4" max="1.4" step="0.1" value="1"></label><button id="reset" class="reset">恢复初始星愿</button><div class="hint">修改会自动保存在当前浏览器。<br>拖动画面旋转视角 · 纯净模式适合录屏</div></section><div class="footer">MADE OF STARDUST & A LITTLE LOVE</div><button class="exit" id="exit">退出纯净模式</button><script>
 const $=s=>document.querySelector(s),canvas=$('#scene'),ctx=canvas.getContext('2d');let W,H,D,clock=0,last=0,playing=true,angle=0,drag=false,px=0;
-const defaults={title:'Merry Christmas',to:'To: you ♡',color:'#f7b7cf',speed:1,density:1};let state={...defaults};try{state={...state,...JSON.parse(localStorage.getItem('starlit-tree-v2')||'{}')}}catch(e){}
+const defaults={title:'Merry Christmas',to:'To: you ♡',color:'#b2d9ff',speed:1,density:1};let state={...defaults};try{state={...state,...JSON.parse(localStorage.getItem('layered-christmas-v1')||'{}')}}catch(e){}
 let rgb=[247,183,207],sprites=[];function palette(){rgb=state.color.match(/\w\w/g).map(x=>parseInt(x,16));sprites=[];for(let i=0;i<3;i++){let s=document.createElement('canvas');s.width=s.height=32;let c=s.getContext('2d'),g=c.createRadialGradient(16,16,0,16,16,16);let col=i===0?'255,246,248':rgb.join(',');g.addColorStop(0,`rgba(${col},1)`);g.addColorStop(.13,`rgba(${col},.95)`);g.addColorStop(.32,`rgba(${col},.24)`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.fillRect(0,0,32,32);sprites.push(s)}$('#greeting').style.color=state.color;$('#dedication').style.color=state.color}
-function sync(){for(const [id,key] of [['titleInput','title'],['toInput','to'],['color','color'],['speed','speed'],['density','density']])$('#'+id).value=state[key];$('#greeting').textContent=state.title;$('#dedication').textContent=state.to;$('#speedLabel').textContent=Number(state.speed).toFixed(1)+'×';palette()}function save(){try{localStorage.setItem('starlit-tree-v2',JSON.stringify(state))}catch(e){}}
+function sync(){for(const [id,key] of [['titleInput','title'],['toInput','to'],['color','color'],['speed','speed'],['density','density']])$('#'+id).value=state[key];$('#greeting').textContent=state.title;$('#dedication').textContent=state.to;$('#speedLabel').textContent=Number(state.speed).toFixed(1)+'×';palette()}function save(){try{localStorage.setItem('layered-christmas-v1',JSON.stringify(state))}catch(e){}}
 for(const [id,key] of [['titleInput','title'],['toInput','to'],['color','color'],['speed','speed'],['density','density']])$('#'+id).addEventListener('input',e=>{state[key]=e.target.value;sync();save()});document.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>{state.color=b.dataset.color;sync();save()});$('#reset').onclick=()=>{state={...defaults};sync();save()};$('#edit').onclick=()=>{let p=$('.panel');p.hidden=!p.hidden;$('#edit').setAttribute('aria-expanded',!p.hidden)};$('#play').onclick=()=>{playing=!playing;$('#play').textContent=playing?'暂停':'播放';$('#play').setAttribute('aria-label',playing?'暂停动画':'播放动画')};function clean(){document.body.classList.toggle('clean')}$('#clean').onclick=clean;$('#exit').onclick=clean;document.addEventListener('keydown',e=>{if(e.key==='Escape')document.body.classList.remove('clean')});
 function resize(){W=innerWidth;H=innerHeight;D=Math.min(devicePixelRatio||1,2);canvas.width=W*D;canvas.height=H*D;ctx.setTransform(D,0,0,D,0,0)}addEventListener('resize',resize);resize();sync();
 let seed=31;function rand(){seed=(seed*16807)%2147483647;return(seed-1)/2147483646}
 // Layered fir boughs: overlapping cones and irregular branch tips, not a spiral outline.
 const particles=[];
-for(let i=0;i<16000;i++){
- let tier=Math.floor((1-Math.sqrt(rand()))*9),low=.035+tier*.102,span=.22-tier*.010;
- let u=Math.pow(rand(),1.6),h=low+u*span;
- let a=rand()*Math.PI*2,branch=.86+.14*Math.cos(a*11+tier*2.3);
- let r=(1-low)*.37*Math.pow(1-u,.8)*Math.pow(rand(),.30)*branch;
- particles.push({h,r,a,s:.22+Math.pow(rand(),3)*.8,p:rand()*6.28,white:rand()<.48});
+for(let i=0;i<24000;i++){
+ let tier=Math.floor(rand()*8),low=.055+tier*.114,span=.125;
+ let u=Math.pow(rand(),1.35),h=low+u*span;
+ let a=rand()*Math.PI*2,branch=.88+.12*Math.cos(a*9+tier*2.3);
+ let r=(1-low)*.445*Math.pow(1-u,.72)*(.68+.32*Math.sqrt(rand()))*branch;
+ particles.push({h,r,a,s:.22+Math.pow(rand(),3)*.8,p:rand()*6.28,white:rand()<.58,edge:1-u});
 }
+const ornaments=Array.from({length:40},(_,i)=>{let tier=1+i%7,low=.055+(7-tier)*.114;return{h:low+.012,r:(1-low)*.39,a:i*2.399,s:.8+rand()*.4,c:i%3,bow:i%6===0}});
+const rootSparkles=Array.from({length:420},()=>({h:rand(),a:rand()*Math.PI*2,r:Math.sqrt(rand()),s:.3+rand()*.55,p:rand()*6.28}));
+const core=Array.from({length:4200},()=>({h:rand()*.97,a:rand()*Math.PI*2,r:Math.sqrt(rand()),s:.25+rand()*.5,p:rand()*6.28}));
 const ground=Array.from({length:11000},()=>({a:rand()*Math.PI*2,r:Math.sqrt(rand())*1.65,s:.22+rand()*.5,p:rand()*6.28,ring:Math.floor(rand()*4),j:rand()}));
 const dust=Array.from({length:1100},()=>({x:rand(),y:rand(),z:rand(),p:rand()*6.28}));
 canvas.onpointerdown=e=>{drag=true;px=e.clientX;canvas.setPointerCapture(e.pointerId)};canvas.onpointermove=e=>{if(drag){angle+=(e.clientX-px)*.008;px=e.clientX}};canvas.onpointerup=canvas.onpointercancel=()=>drag=false;
@@ -26,7 +29,7 @@ function dot(x,y,size,alpha,white=false){ctx.globalAlpha=Math.max(0,Math.min(1,a
 function render(now){
  if(last&&playing)clock+=Math.min((now-last)/1000,.05)*Number(state.speed);last=now;
  const t=clock;ctx.globalAlpha=1;ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);ctx.globalCompositeOperation='lighter';
- const height=Math.min(W*.65,H*.53),cx=W*.5,base=H*.69,rot=t*.16+angle,unit=Math.max(.75,height/290),den=Number(state.density);
+ const height=Math.min(W*.98,H*.59),cx=W*.5,base=H*.69,rot=t*.16+angle,unit=Math.max(.75,height/290),den=Number(state.density);
 
  // Background sparks stay around the scene, leaving black space above and below.
  for(const p of dust){let y=base-height*1.05+p.y*height*1.3;let x=p.x*W+Math.sin(t*.2+p.p)*3;
@@ -34,26 +37,51 @@ function render(now){
  // A dense flattened disk with irregular, granular orbital bands.
  for(let i=0;i<Math.min(ground.length,ground.length*den/1.4);i++){
  let p=ground[i],a=p.a+rot*.45,r=i%3===0?p.r:(.42+p.ring*.31+(p.j-.5)*.075+Math.sin(a*5+t+p.p)*.018);
- let x=cx+Math.cos(a)*r*height*1.28,y=base+Math.sin(a)*r*height*.24;
+ let x=cx+Math.cos(a)*r*height*1.28,y=base+Math.sin(a)*r*height*.22;
  let bright=.38+.5*(.5+.5*Math.sin(p.p*8+t*1.7));
  dot(x,y,p.s*unit*1.7,bright,true);
+ }
+ // Inner foliage connects the tiers without an exposed straight support.
+ ctx.globalCompositeOperation='lighter';
+ for(let i=0;i<core.length;i++){
+  const p=core[i],a=p.a+rot,r=(1-p.h)*.22*p.r,z=Math.sin(a)*r;
+  dot(cx+Math.cos(a)*r*height,base-p.h*height+z*height*.10,p.s*unit*(1-p.h*.5),.25+.20*Math.sin(t*1.5+p.p)**2,i%3===0);
  }
  // The layered tree volume rotates while individual sparks shimmer.
  for(let i=0;i<Math.min(particles.length,particles.length*den/1.4);i++){
  let p=particles[i],a=p.a+rot,r=p.r*(1+.015*Math.sin(t*1.2+p.p));
  let z=Math.sin(a)*r,x=Math.cos(a)*r;
- let y=base-p.h*height+z*height*.22+Math.sin(t+p.p)*height*.002;
+ let y=base-p.h*height+z*height*.10+Math.sin(t+p.p)*height*.002;
  let twinkle=.55+.45*Math.sin(t*2.7+p.p*9);
- dot(cx+x*height,y,p.s*unit*1.45,(.52+twinkle*.48)*(.8+z*.6),p.white);
+ dot(cx+x*height,y,p.s*unit*1.45*(1-p.h*.35),(.45+twinkle*.45)*(.70+p.edge*.40)*(.8+z*.6),p.white);
  }
- // Loose moving glitter follows the boughs without joining into a continuous line.
- for(let i=0;i<2200;i++){
- let p=particles[i],h=(p.h+t*.027)%1,a=h*31-rot*1.2+p.p*.11,r=(1-h)*.31;
- let x=Math.cos(a)*r+Math.sin(p.p*93)*.022,z=Math.sin(a)*r;
- dot(cx+x*height,base-h*height+z*height*.19+Math.cos(p.p*57)*height*.014,(.28+p.s*.42)*unit,.65,p.white);
+ // Discrete warm-white fairy bulbs wrap behind and in front of the boughs.
+ for(let i=0;i<235;i++){
+  let h=.08+i/235*.86,a=h*31+rot,r=(1-h)*.40,z=Math.sin(a)*r;
+  if(z<0)continue;
+  let x=cx+Math.cos(a)*r*height,y=base-h*height+z*height*.10;
+  dot(x,y,1.3*unit,.55+.25*Math.sin(t*1.6+i)**2,true);
+  ctx.globalAlpha=.85;ctx.fillStyle='#ffe4ab';ctx.beginPath();ctx.arc(x,y,.6*unit,0,Math.PI*2);ctx.fill();
  }
- // Narrow luminous trunk and a bright, scattered pool at its foot.
- for(let j=0;j<500;j++){let p=particles[j];dot(cx+Math.sin(p.p*23)*height*.016,base-p.h*height*.14,p.s*unit,.7,true)}
+ // Larger glossy baubles remain distinct from the fine leaf particles.
+ ctx.globalCompositeOperation='source-over';
+ for(const o of ornaments){
+  let a=o.a+rot,z=Math.sin(a)*o.r;if(z<-.06)continue;
+  let x=cx+Math.cos(a)*o.r*height,y=base-o.h*height+z*height*.10+Math.sin(t*1.4+o.a)*height*.002;
+  let r=height*.014*o.s,colors=['#e7c88a','#eaa6c0','#8acdf1'];
+  ctx.globalAlpha=1;ctx.strokeStyle='#d9c590';ctx.lineWidth=.65;ctx.beginPath();ctx.moveTo(x,y-r*1.9);ctx.lineTo(x,y-r);ctx.stroke();
+  let g=ctx.createRadialGradient(x-r*.35,y-r*.4,r*.05,x,y,r);g.addColorStop(0,'#fffdf3');g.addColorStop(.23,colors[o.c]);g.addColorStop(.65,colors[o.c]);g.addColorStop(1,'#464052');
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.fillStyle='#e8d9ab';ctx.fillRect(x-r*.25,y-r*1.15,r*.5,r*.25);
+  if(o.bow){ctx.fillStyle='#db9bb7';ctx.beginPath();ctx.moveTo(x,y-r*1.3);ctx.bezierCurveTo(x-r*2,y-r*3,x-r*2.2,y-r*.2,x,y-r*1.3);ctx.bezierCurveTo(x+r*2.2,y-r*.2,x+r*2,y-r*3,x,y-r*1.3);ctx.fill()}
+ }
+ ctx.globalCompositeOperation='lighter';
+ // A short, visible particle trunk joins the lowest bough to the ground.
+ for(const p of rootSparkles){
+  const h=p.h*.09-.012,a=p.a+rot,r=(.012+(1-p.h)*.004)*p.r;
+  const x=cx+Math.cos(a)*r*height+Math.sin(t+p.p)*height*.0006;
+  const y=base-h*height+Math.sin(a)*r*height*.1;
+  dot(x,y,p.s*unit*.75,.38+.25*Math.sin(t*1.8+p.p)**2,p.s>.55);
+ }
  // Filled particle heart, with a softly sparkling edge.
  let hy=base-height*1.045,pulse=1+Math.sin(t*2.1)*.035,k=height*.0032*pulse;
  for(let j=0;j<650;j++){let p=particles[j],a=p.p,r=j<230?1:Math.sqrt((Math.sin(j*71.7)+1)*.5);
